@@ -1,0 +1,384 @@
+:root {
+  --theme-color: #e92d28;
+}
+* {
+  font-family: "Fira Sans", serif;
+}
+a {
+  text-decoration: none;
+}
+a:visited,
+a:link {
+  color: var(--theme-color);
+}
+body {
+  background-color: rgb(243, 243, 243);
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.nav {
+  margin: 30px 0px 30px 70px;
+  display: flex;
+  font-weight: 550;
+  justify-content: flex-start;
+  gap: 3vw;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.title {
+  color: var(--theme-color);
+  font-size: 30px;
+  cursor: pointer;
+  font-weight: 550;
+}
+.nav-child {
+  min-width: 30px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+}
+.nav-child > svg {
+  color: black;
+  min-width: 16px;
+}
+.hero {
+  position: relative;
+  z-index: 1;
+  width: 90vw;
+  height: 100vh;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  margin: 5vh auto;
+  background-image: url("https://demo.gloriathemes.com/platea/demo/wp-content/uploads/2025/01/search-hero-2.jpg");
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  z-index: 2;
+}
+
+#hero-text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  margin: 0px 0px 0px 70px;
+  width: 50vw;
+  color: white;
+  position: relative;
+  z-index: 3;
+  opacity: 1;
+}
+#hero-text > * {
+  font-size: 19px;
+}
+#main-text {
+  font-size: 60px;
+  font-weight: 550;
+}
+#search {
+  border: 0;
+  background-color: white;
+  height: 60px;
+  width: 90%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+#search input {
+  color: black;
+  border: 0;
+  width: 77%;
+  font-size: 16px;
+}
+#search input::placeholder {
+  font-size: 16px;
+}
+input:focus {
+  outline: none;
+}
+#search svg:first-child {
+  padding: 0px 0px 7px 20px;
+}
+#search-button {
+  padding: 0px 20px 0px 0px;
+  cursor: pointer;
+}
+.recipes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: 450;
+  width: 90vw;
+  margin: 50px auto;
+}
+.recipes hr {
+  height: 0.5px;
+  background-color: black;
+}
+#latest {
+  margin: 25px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+  justify-items: center;
+  justify-content: center;
+  align-items: start;
+}
+.grid-elements{
+  cursor:pointer;
+}
+.grid img {
+  width: 100%;
+  border-radius: 15px;
+}
+.menu-type {
+  color: var(--theme-color);
+  font-size: 16px;
+  font-weight: 600;
+  margin: 10px 0px;
+}
+.caption {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 10px 0px 5px 0px;
+}
+.caption:hover,
+.tags:hover {
+  cursor: pointer;
+  color: var(--theme-color);
+}
+.tags {
+  font-size: 14px;
+  font-weight: 300;
+}
+.features {
+  height: 90vh;
+  width: 90vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+  margin: 50px auto;
+}
+#first-feature,
+#second-feature {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 17px;
+  display: flex;
+  align-items: center;
+}
+#first-feature {
+  color: white;
+  background-image: url("https://demo.gloriathemes.com/platea/demo/wp-content/uploads/2024/12/section-bg-02.jpg");
+}
+#second-feature {
+  background-image: url("https://demo.gloriathemes.com/platea/demo/wp-content/uploads/2024/12/section-bg-03.jpg");
+}
+.feature-data {
+  padding: 3vw;
+  width: 60%;
+}
+.heading-feature {
+  font-size: 35px;
+  font-weight: 600;
+  margin: 30px 0px;
+}
+.describe-feature {
+  line-height: 0.7cm;
+  margin: 30px 0px;
+}
+.feature-button {
+  background-color: var(--theme-color);
+  width: 40%;
+  text-align: center;
+  height: 40px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: white;
+}
+.feature-button:hover {
+  background-color: transparent;
+  cursor: pointer;
+}
+.popular-tags {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #e5e5e7;
+  margin: 10vh auto;
+  max-width: 90vw;
+  border-radius: 20px;
+}
+.head-tags {
+  margin-top: 40px;
+  font-size: 42px;
+  font-weight: 500;
+  text-align: center;
+}
+.text-tags {
+  font-weight: 300;
+  font-size: 16px;
+  text-align: center;
+}
+.actual-tags {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 30px;
+  column-gap: 10px;
+  margin-bottom: 40px;
+  width: 80%;
+}
+.tag-element {
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: white;
+  text-transform: uppercase;
+}
+.tag-element:hover {
+  background-color: var(--theme-color);
+  color: white;
+  cursor: pointer;
+}
+@media screen and (max-width: 700px) {
+  .nav {
+    margin-left: 10px;
+  }
+  .nav-child {
+    display: none;
+  }
+  .hero {
+    background-image: url("https://demo.gloriathemes.com/platea/demo/wp-content/uploads/2024/12/recipe-6-630x785.jpg");
+    background-position: center;
+    min-height: 60vw;
+  }
+  #hero-text {
+    --width: 70vw;
+    width: var(--width);
+    margin-left: calc((100vw - var(--width)) / 2);
+  }
+  .hero {
+    height: 80vh;
+  }
+  #hero-text > * {
+    font-size: 16px;
+  }
+  #main-text {
+    font-size: 40px;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.socials {
+  margin: 15px 0px;
+  display: flex;
+  gap: 16px;
+}
+.footer-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0px;
+  gap: 16px;
+  font-weight: 400;
+}
+.footer-bar div:hover,
+.socials div:hover {
+  cursor: pointer;
+  color: var(--theme-color);
+}
+.footer hr {
+  width: 60%;
+  height: 0.25;
+  background-color: black;
+}
+.final-icon {
+  color: var(--theme-color);
+  font-size: 30px;
+  cursor: pointer;
+  font-weight: 550;
+  margin: 20px 0;
+}
+@media screen and (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    width: 80vw;
+    /* height: 120vh; */
+  }
+}
+@media screen and ((min-width: 700px) and (max-width:1000px)) {
+  .nav {
+    margin-left: 20px;
+  }
+  .nav-child > svg {
+    display: none;
+  }
+  #hero-text > * {
+    font-size: 17px;
+  }
+  #main-text {
+    font-size: 50px;
+  }
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and ((min-width: 1000px) and (max-width:1400px)) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .features {
+    grid-template-columns: 1fr;
+    height: 150vh;
+  }
+  #first-feature {
+    background-position: top center;
+  }
+  #second-feature {
+    background-position: top;
+  }
+  .feature-data {
+    width: 70%;
+  }
+}
