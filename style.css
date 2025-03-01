@@ -149,6 +149,9 @@ input:focus {
   justify-content: center;
   align-items: start;
 }
+.grid hr {
+  display: none;
+}
 .grid-elements {
   cursor: pointer;
 }
@@ -317,9 +320,8 @@ input:focus {
   margin: 20px 0;
 }
 @media screen and (max-width: 750px) {
-  .nav{
+  .nav {
     padding: 15px 0px 15px 27px !important;
-    position: relative;
   }
   .nav-child {
     display: none;
@@ -385,6 +387,11 @@ input:focus {
   .head-tags {
     font-size: 38px;
   }
+  .grid hr {
+    display: block;
+    width: 80%;
+    margin: 30px auto;
+  }
 }
 @media screen and ((min-width: 450px) and (max-width: 550px)) {
   .grid {
@@ -398,6 +405,11 @@ input:focus {
   }
   .feature-button {
     width: 40%;
+  }
+  .grid hr {
+    display: block;
+    width: 80%;
+    margin: 30px auto;
   }
 }
 @media screen and ((min-width: 750px) and (max-width:1000px)) {
