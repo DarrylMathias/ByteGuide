@@ -84,7 +84,7 @@ body {
   position: relative;
   z-index: 3;
   opacity: 1;
-  align-items: center;
+  align-items: start;
 }
 #hero-text > * {
   font-size: 19px;
@@ -318,7 +318,8 @@ input:focus {
 }
 @media screen and (max-width: 750px) {
   .nav{
-    padding: 15px 0px 25px 15px !important;
+    padding: 15px 0px 15px 27px !important;
+    position: relative;
   }
   .nav-child {
     display: none;
@@ -333,6 +334,7 @@ input:focus {
     margin-left: 10%;
     padding: 0;
     text-align: center;
+    align-items: center;
   }
   .hero {
     height: 80vh;
@@ -348,9 +350,6 @@ input:focus {
   }
 }
 @media screen and (max-width: 450px) {
-  .nav{
-    padding: 10px 0px 25px 10px !important;
-  }
   #main-text {
     font-size: 30px;
   }
