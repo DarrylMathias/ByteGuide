@@ -84,6 +84,7 @@ body {
   position: relative;
   z-index: 3;
   opacity: 1;
+  align-items: center;
 }
 #hero-text > * {
   font-size: 19px;
@@ -315,7 +316,41 @@ input:focus {
   font-weight: 550;
   margin: 20px 0;
 }
+@media screen and (max-width: 750px) {
+  .nav{
+    padding: 15px 0px 25px 15px !important;
+  }
+  .nav-child {
+    display: none;
+  }
+  .hero {
+    background-image: url("https://demo.gloriathemes.com/platea/demo/wp-content/uploads/2024/12/recipe-6-630x785.jpg");
+    background-position: center;
+    min-height: 60vw;
+  }
+  #hero-text {
+    width: 80%;
+    margin-left: 10%;
+    padding: 0;
+    text-align: center;
+  }
+  .hero {
+    height: 80vh;
+  }
+  #hero-text > * {
+    font-size: 16px;
+  }
+  #main-text {
+    font-size: 40px;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media screen and (max-width: 450px) {
+  .nav{
+    padding: 10px 0px 25px 10px !important;
+  }
   #main-text {
     font-size: 30px;
   }
@@ -366,40 +401,9 @@ input:focus {
     width: 40%;
   }
 }
-@media screen and (max-width: 750px) {
-  .nav {
-    position: relative;
-  }
-  .nav-child {
-    display: none;
-  }
-  .hero {
-    background-image: url("https://demo.gloriathemes.com/platea/demo/wp-content/uploads/2024/12/recipe-6-630x785.jpg");
-    background-position: center;
-    min-height: 60vw;
-  }
-  #hero-text {
-    --width: 70vw;
-    width: var(--width);
-    margin-left: calc((100vw - var(--width)) / 2);
-    padding: 0;
-  }
-  .hero {
-    height: 80vh;
-  }
-  #hero-text > * {
-    font-size: 16px;
-  }
-  #main-text {
-    font-size: 40px;
-  }
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 @media screen and ((min-width: 750px) and (max-width:1000px)) {
   .nav {
-    margin-left: 20px;
+    padding-left: 50px;
   }
   .nav-child > svg {
     display: none;
