@@ -114,6 +114,9 @@ body {
   padding: 0;
   width: auto;
 }
+.logonav{
+  gap: 4vw;
+}
 .hamburger-logo{
   display: flex;
   align-items: center;
@@ -433,6 +436,10 @@ input:focus {
     display: flex;
   }
   .nav-child {
+    display: none;
+    font-size: 18px;
+  }
+  .nav-child > svg {
     display: none;
   }
   .hero {
