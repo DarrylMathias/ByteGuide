@@ -4,6 +4,53 @@
 * {
   font-family: "Fira Sans", serif;
 }
+/* Animations */
+@keyframes scale {
+  from{
+    opacity: 0;
+    scale: 0.5;
+  }
+  to{
+    opacity: 1;
+    scale: 1;
+  }
+}
+@keyframes slideInLeft {
+  from{
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes slideInRight {
+  from{
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+/* Utility Classes */
+.slideInLeft{
+  animation: slideInLeft linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+.slideInRight{
+  animation: slideInRight linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+.scale{
+  animation: scale linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
 a {
   text-decoration: none;
 }
@@ -43,6 +90,11 @@ body {
   gap: 8px;
   align-items: center;
   cursor: pointer;
+  transition: all 0.05s;
+}
+.nav-child:hover{
+  transform: translateY(-5px);
+  color: var(--theme-color);
 }
 .nav-child > svg {
   color: black;
@@ -276,11 +328,13 @@ input:focus {
   margin: 10px 0;
   background-color: white;
   text-transform: uppercase;
+  transition: all 0.2s;
 }
 .tag-element:hover {
   background-color: var(--theme-color);
   color: white;
   cursor: pointer;
+  transform: translateY(-5px);
 }
 .footer {
   display: flex;
@@ -292,6 +346,7 @@ input:focus {
   margin: 15px 0px;
   display: flex;
   gap: 16px;
+  transition: all 0.3s;
 }
 .footer-bar {
   display: flex;
@@ -306,6 +361,9 @@ input:focus {
 .socials div:hover {
   cursor: pointer;
   color: var(--theme-color);
+}
+.socials div:hover{
+  transform: translateY(-5px);
 }
 .footer hr {
   width: 60%;
