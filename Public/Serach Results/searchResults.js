@@ -30,7 +30,7 @@ for (let i = 1; i <= 20; i++) {
 async function changePage() {
     let recipe = this.children[2].innerHTML.trim();
     localStorage.setItem("contentData", recipe);
-    window.open("https://github.com/DarrylMathias/ByteGuide/blob/main/Public/Recipes/recipe.html", "_self");
+    window.open("https://github.com/DarrylMathias/ByteGuide/Public/Recipes/recipe.html", "_self");
 }
 let countries = ["French","British","Mexican","Indian","Italian","Chinese","Egyptian","Thai"]
 let categories = ["Lamb","Seafood","Vegan","Dessert","Breakfast","Goat","Starter","Pasta","Chicken"]
