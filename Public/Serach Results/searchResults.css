@@ -1,0 +1,17 @@
+.searchResult{
+    margin: 5vh 5vw;
+    font-size: 30px;
+}
+.grid{
+    width: 90%;
+    margin: auto;
+}
+.grid-elements{
+    display: none;
+}
+p.searchResult{
+    display: none;
+}
+.footer{
+    margin-top: 200px;
+}

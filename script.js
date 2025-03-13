@@ -22,18 +22,41 @@ function darkMode() {
         tags[i].classList.toggle("tag-element-js");
     };
 }
-async function upadateRandomMeal() {
-    for(let i=1; i<=8; i++){
+async function updateRandomMeal() {
+    for (let i = 1; i <= 8; i++) {
         const rawData = await fetch("https://www.themealdb.com/api/json/v1/1/random.php");
-        if(rawData.status == 404){
+        if (rawData.status == 404) {
             console.log("Could'nt Fetch API");
-        }else{
+        } else {
             const data = await rawData.json();
-                document.querySelector(".recipe" + i + " img").src = data.meals[0].strMealThumb;
-                document.querySelector(".recipe" + i + " .menu-type").innerHTML = data.meals[0].strCategory;
-                document.querySelector(".recipe" + i + " .caption").innerHTML = data.meals[0].strMeal;
-                document.querySelector(".recipe" + i + " .tags").innerHTML = data.meals[0].strArea;
+            document.querySelector(".recipe" + i + " img").src = data.meals[0].strMealThumb;
+            document.querySelector(".recipe" + i + " .menu-type").innerHTML = data.meals[0].strCategory;
+            document.querySelector(".recipe" + i + " .caption").innerHTML = data.meals[0].strMeal;
+            document.querySelector(".recipe" + i + " .tags").innerHTML = data.meals[0].strArea;
         }
     }
 }
-upadateRandomMeal();
+updateRandomMeal();
+for (let i = 1; i <= 8; i++) {
+    document.querySelector(".recipe" + i).addEventListener("click", changePage);
+}
+async function changePage() {
+    let recipe = this.children[2].innerHTML.trim();
+    localStorage.setItem("contentData", recipe);
+    window.open("/Public/Recipes/recipe.html", "_self");
+}
+document.querySelector("#search-button").addEventListener("click", searchRes);
+let tags = document.querySelectorAll(".tag-element");
+for(let el of tags){
+    el.addEventListener("click", searchRes2);
+}
+async function searchRes() {
+    console.log(this);
+    localStorage.setItem("searchVal", document.querySelector("#searchBar").value.trim());
+    window.open("/Public/Serach Results/searchResult.html", "_self");
+}
+async function searchRes2() {
+    console.log(this);
+    localStorage.setItem("searchVal", this.innerHTML);
+    window.open("/Public/Serach Results/searchResult.html", "_self");
+}
