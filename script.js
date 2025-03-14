@@ -22,17 +22,23 @@ function darkMode() {
         tags[i].classList.toggle("tag-element-js");
     };
 }
+let addedMeals = new Set();
 async function updateRandomMeal() {
-    for (let i = 1; i <= 8; i++) {
+    for (let i = 1; i <= 8;) {
         const rawData = await fetch("https://www.themealdb.com/api/json/v1/1/random.php");
         if (rawData.status == 404) {
             console.log("Could'nt Fetch API");
         } else {
             const data = await rawData.json();
-            document.querySelector(".recipe" + i + " img").src = data.meals[0].strMealThumb;
-            document.querySelector(".recipe" + i + " .menu-type").innerHTML = data.meals[0].strCategory;
-            document.querySelector(".recipe" + i + " .caption").innerHTML = data.meals[0].strMeal;
-            document.querySelector(".recipe" + i + " .tags").innerHTML = data.meals[0].strArea;
+            const mealName = data.meals[0].strMeal;
+            if (!addedMeals.has(mealName)) {
+                addedMeals.add(mealName);
+                document.querySelector(".recipe" + i + " img").src = data.meals[0].strMealThumb;
+                document.querySelector(".recipe" + i + " .menu-type").innerHTML = data.meals[0].strCategory;
+                document.querySelector(".recipe" + i + " .caption").innerHTML = data.meals[0].strMeal;
+                document.querySelector(".recipe" + i + " .tags").innerHTML = data.meals[0].strArea;
+                i++;
+            }
         }
     }
 }
@@ -60,3 +66,20 @@ async function searchRes2() {
     localStorage.setItem("searchVal", this.innerHTML);
     window.open("./public/searchResult.html", "_self");
 }
+let countries = ["American","Canadian","Croatian","French","British","Mexican","Indian","Italian","Chinese","Egyptian","Thai","Dutch","Filipino","Greek","Irish","Jamaican","Japanese","Kenyan","Malaysian","Moroccan","Polish","Portuguese","Russian","Spanish","Tunisian","Turkish","Ukrainian","Uruguayan","Vietnamese"];
+let categories = ["Beef","Miscellaneous","Pork","Side","Starter","Vegetarian","Lamb","Seafood","Vegan","Dessert","Breakfast","Goat","Starter","Pasta","Chicken"];
+function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1)); // Random index
+        [arr[i], arr[j]] = [arr[j], arr[i]]; // Swap elements
+    }
+    return arr;
+}
+function addShuffled(){
+    grandArray = shuffleArray(countries.concat(categories));
+    finalArray = (grandArray).slice(0,16);
+    for(let i=0; i<16; i++){
+        document.querySelectorAll(".tag-element")[i].innerHTML = finalArray[i];
+    }
+}
+addShuffled();

@@ -24,7 +24,7 @@ function darkMode() {
         tags[i].classList.toggle("tag-element-js");
     };
 }
-for (let i = 1; i <= 20; i++) {
+for (let i = 1; i <= 40; i++) {
     document.querySelector(".recipe" + i).addEventListener("click", changePage);
 }
 async function changePage() {
@@ -32,8 +32,8 @@ async function changePage() {
     localStorage.setItem("contentData", recipe);
     window.open("./recipe.html", "_self");
 }
-let countries = ["French","British","Mexican","Indian","Italian","Chinese","Egyptian","Thai"]
-let categories = ["Lamb","Seafood","Vegan","Dessert","Breakfast","Goat","Starter","Pasta","Chicken"]
+let countries = ["American","Canadian","Croatian","French","British","Mexican","Indian","Italian","Chinese","Egyptian","Thai","Dutch","Filipino","Greek","Irish","Jamaican","Japanese","Kenyan","Malaysian","Moroccan","Polish","Portuguese","Russian","Spanish","Tunisian","Turkish","Ukrainian","Uruguayan","Vietnamese"];
+let categories = ["Beef","Miscellaneous","Pork","Side","Starter","Vegetarian","Lamb","Seafood","Vegan","Dessert","Breakfast","Goat","Starter","Pasta","Chicken"];
 async function search() {
     flag = true
     let head = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
