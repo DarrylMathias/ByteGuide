@@ -43,7 +43,7 @@ for (let i = 1; i <= 8; i++) {
 async function changePage() {
     let recipe = this.children[2].innerHTML.trim();
     localStorage.setItem("contentData", recipe);
-    window.open("./Public/Recipes/recipe.html", "_self");
+    window.open("./public/Recipes/recipe.html", "_self");
 }
 document.querySelector("#search-button").addEventListener("click", searchRes);
 let tags = document.querySelectorAll(".tag-element");
@@ -53,10 +53,10 @@ for (let el of tags) {
 async function searchRes() {
     console.log(this);
     localStorage.setItem("searchVal", document.querySelector("#searchBar").value.trim());
-    window.open("./Public/Serach%20Results/searchResult.html", "_self");
+    window.open("./public/Serach%20Results/searchResult.html", "_self");
 }
 async function searchRes2() {
     console.log(this);
     localStorage.setItem("searchVal", this.innerHTML);
-    window.open("./Public/Serach%20Results/searchResult.html", "_self");
+    window.open("./public/Serach%20Results/searchResult.html", "_self");
 }
