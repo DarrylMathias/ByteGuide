@@ -20,7 +20,7 @@ function darkMode() {
 }
 let date = new Date();
 let hrs = date.getHours();
-if((0 >= hrs && hrs <= 7) || (17 >= hrs && hrs <= 23)){
+if ((hrs >= 0 && hrs <= 7) || (hrs >= 17 && hrs <= 23)) {
     darkMode();
 }
 for (let i = 1; i <= 40; i++) {
@@ -31,19 +31,19 @@ async function changePage() {
     localStorage.setItem("contentData", recipe);
     window.open("./recipe.html", "_self");
 }
-let countries = ["American","Canadian","Croatian","French","British","Mexican","Indian","Italian","Chinese","Egyptian","Thai","Dutch","Filipino","Greek","Irish","Jamaican","Japanese","Kenyan","Malaysian","Moroccan","Polish","Portuguese","Russian","Spanish","Tunisian","Turkish","Ukrainian","Uruguayan","Vietnamese"];
-let categories = ["Beef","Miscellaneous","Pork","Side","Starter","Vegetarian","Lamb","Seafood","Vegan","Dessert","Breakfast","Goat","Starter","Pasta","Chicken"];
+let countries = ["American", "Canadian", "Croatian", "French", "British", "Mexican", "Indian", "Italian", "Chinese", "Egyptian", "Thai", "Dutch", "Filipino", "Greek", "Irish", "Jamaican", "Japanese", "Kenyan", "Malaysian", "Moroccan", "Polish", "Portuguese", "Russian", "Spanish", "Tunisian", "Turkish", "Ukrainian", "Uruguayan", "Vietnamese"];
+let categories = ["Beef", "Miscellaneous", "Pork", "Side", "Starter", "Vegetarian", "Lamb", "Seafood", "Vegan", "Dessert", "Breakfast", "Goat", "Starter", "Pasta", "Chicken"];
 async function search() {
     flag = true
     let head = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
-    for(el of countries){
-        if(el == searchVal){
+    for (el of countries) {
+        if (el == searchVal) {
             head = "https://www.themealdb.com/api/json/v1/1/filter.php?a=";
             flag = false;
         }
     }
-    for(el of categories){
-        if(el == searchVal){
+    for (el of categories) {
+        if (el == searchVal) {
             head = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
             flag = false;
         }
@@ -55,7 +55,7 @@ async function search() {
         const data = await rawData.json();
         console.log(data);
         let noOfResults = data.meals ? data.meals.length : 0;
-        if(noOfResults < 1){
+        if (noOfResults < 1) {
             document.querySelector("p.searchResult").style.display = "block";
             setTimeout(() => {
                 document.querySelector("p.searchResult").style.display = "none";
@@ -65,10 +65,10 @@ async function search() {
             gridElements[i].style.display = "block";
             document.querySelector(".recipe" + (i + 1) + " img").src = data.meals[i].strMealThumb;
             document.querySelector(".recipe" + (i + 1) + " .caption").innerHTML = data.meals[i].strMeal;
-            if(flag){
+            if (flag) {
                 document.querySelector(".recipe" + (i + 1) + " .tags").innerHTML = data.meals[i].strArea;
                 document.querySelector(".recipe" + (i + 1) + " .menu-type").innerHTML = data.meals[i].strCategory;
-            }else{
+            } else {
                 document.querySelector(".recipe" + (i + 1) + " .tags").innerHTML = "";
                 document.querySelector(".recipe" + (i + 1) + " .menu-type").innerHTML = "";
             }
