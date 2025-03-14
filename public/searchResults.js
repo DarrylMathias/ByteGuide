@@ -17,12 +17,11 @@ function darkMode() {
     document.querySelector(".nav").classList.toggle("nav-dark");
     document.querySelector(".logonav").classList.toggle("nav-dark");
     document.querySelector(".innernav").classList.toggle("nav-dark");
-    document.querySelector(".second-feature").classList.toggle("html-pseudo-dark");
-    document.querySelector(".popular-tags").classList.toggle("nav-dark");
-    const tags = document.querySelectorAll(".tag-element")
-    for (let i = 0; i < tags.length; i++) {
-        tags[i].classList.toggle("tag-element-js");
-    };
+}
+let date = new Date();
+let hrs = date.getHours();
+if((0 >= hrs && hrs <= 7) || (17 >= hrs && hrs <= 23)){
+    darkMode();
 }
 for (let i = 1; i <= 40; i++) {
     document.querySelector(".recipe" + i).addEventListener("click", changePage);

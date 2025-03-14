@@ -22,6 +22,11 @@ function darkMode() {
         tags[i].classList.toggle("tag-element-js");
     };
 }
+let date = new Date();
+let hrs = date.getHours();
+if((0 >= hrs && hrs <= 7) || (17 >= hrs && hrs <= 23)){
+    darkMode();
+}
 let addedMeals = new Set();
 async function updateRandomMeal() {
     for (let i = 1; i <= 8;) {
