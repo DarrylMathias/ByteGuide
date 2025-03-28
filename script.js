@@ -24,7 +24,7 @@ function darkMode() {
 }
 let date = new Date();
 let hrs = date.getHours();
-if((0 >= hrs && hrs <= 7) || (17 >= hrs && hrs <= 23)){
+if ((hrs >= 0 && hrs <= 7) || (hrs >= 17 && hrs <= 23)) {
     darkMode();
 }
 let addedMeals = new Set();
